@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event.user_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Stream type:</strong>
+  <%= @event.stream_type %>
+</p>
+
+<p>
+  <strong>Stream key:</strong>
+  <%= @event.stream_key %>
+</p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @event.starts_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @event.ends_at %>
+</p>
+
+<p>
+  <strong>Next event:</strong>
+  <%= @event.next_event_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @event.status %>
+</p>
+
+<p>
+  <strong>Embed:</strong>
+  <%= @event.embed %>
+</p>
+
+<p>
+  <strong>Banned user ids:</strong>
+  <%= @event.banned_user_ids %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

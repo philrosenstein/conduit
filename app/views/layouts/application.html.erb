@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Conduit<%= (!Rails.env.production? ? " [#{Rails.env}]" : "") %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<ul class="hmenu">
+
+  <li>
+    <%= link_to('Event List', events_path) %>
+  </li>
+
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to('New Event', new_event_path) %>
+    </li>
+    <li>
+      <%= link_to('My Account', edit_user_registration_path(current_user)) %>
+    </li>
+    <li>
+      <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>        
+    </li>
+  <% else %>
+    <li>
+      <%= link_to('Create Account', new_user_registration_path) %>
+    </li>
+    <li>
+      <%= link_to('Sign in', new_user_session_path) %>
+    </li>
+  <% end %>
+
+</ul>
+
+<%= yield %>
+
+</body>
+</html>

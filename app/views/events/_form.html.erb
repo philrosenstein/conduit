@@ -1,0 +1,65 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.hidden_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :host_user_id %><br>
+    <%= f.hidden_field :host_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :stream_type %><br>
+    <%= f.text_field :stream_type %>
+  </div>
+  <div class="field">
+    <%= f.label :stream_key %><br>
+    <%= f.text_field :stream_key %>
+  </div>
+  <div class="field">
+    <%= f.label :starts_at %><br>
+    <%= f.datetime_select :starts_at %>
+  </div>
+  <div class="field">
+    <%= f.label :ends_at %><br>
+    <%= f.datetime_select :ends_at %>
+  </div>
+  <div class="field">
+    <%= f.label :next_event_id %><br>
+    <%= f.number_field :next_event_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :embed %><br>
+    <%= f.text_area :embed %>
+  </div>
+  <div class="field">
+    <%= f.label :banned_user_ids %><br>
+    <%= f.text_field :banned_user_ids %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
